@@ -1,5 +1,5 @@
 package com.tech.blog.dao;
-
+//
 import java.sql.*;
 
 public class LikeDao {
