@@ -73,21 +73,24 @@ public class EditServlet extends HttpServlet {
 
             //update database....
             UserDao userDao = new UserDao(ConnectionProvider.getConnection());
-
+            System.out.println("--user");
             boolean ans = userDao.updateUser(user);
             if (ans) {
-
+            	System.out.println("ans"+ans);
+            	System.out.println("user.getProfile()"+user.getProfile());
                 String path = request.getRealPath("/") + "pics" + File.separator + user.getProfile();
-
+                System.out.println("path"+path);
                 //start of photo work
                 //delete code
                 String pathOldFile = request.getRealPath("/") + "pics" + File.separator + oldFile;
-
+                System.out.println("patholdfile"+pathOldFile);
                 if (!oldFile.equals("default.png")) {
+                	System.out.println("delete old file");
                     Helper.deleteFile(pathOldFile);
                 }
 
                 if (Helper.saveFile(part.getInputStream(), path)) {
+                	System.out.println("save file");
                     out.println("Profile updated...");
                     Message msg = new Message("Profile details updated...", "success", "alert-success");
                     s.setAttribute("msg", msg);

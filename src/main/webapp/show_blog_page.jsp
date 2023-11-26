@@ -174,7 +174,7 @@ body {
 								<% UserDao ud = new UserDao(ConnectionProvider.getConnection());%>
 
 								<p class="post-user-info">
-									<a href="#!"> <%= ud.getUserByUserId(p.getUserId()).getName()%></a>
+									<a href="profile.jsp"> <%= ud.getUserByUserId(p.getUserId()).getName()%></a>
 									has posted :
 								</p>
 							</div>
