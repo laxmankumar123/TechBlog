@@ -73,7 +73,7 @@
 }
 
 body {
-	background: url(img/bg.jpeg);
+	background: url(img/Sep_01.png);
 	background-size: cover;
 	background-attachment: fixed;
 }
